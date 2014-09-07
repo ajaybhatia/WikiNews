@@ -25,6 +25,7 @@
 package com.ajaybhatia.wikinews;
 
 import com.ajaybhatia.wikinews.core.Wiki;
+import java.util.ArrayList;
 
 /**
  *
@@ -34,6 +35,11 @@ public class Main {
     public static void main(String[] args) {
         Wiki wiki = new Wiki();
         
-        System.out.println(wiki.headlines());
+        System.out.println("In the news");
+        System.out.println("===========\n");
+        int i = 1;
+        ArrayList<String> newsList = wiki.headlines();
+        for (String news : newsList)
+            System.out.println(i++ + ") " + news);
     }
 }
