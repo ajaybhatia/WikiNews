@@ -29,5 +29,7 @@ package readwebsite;
  * @author Ajay Bhatia <prof.ajaybhatia@gmail.com>
  */
 public class Main {
-    
+    public static void main(String[] args) {
+        
+    }
 }
