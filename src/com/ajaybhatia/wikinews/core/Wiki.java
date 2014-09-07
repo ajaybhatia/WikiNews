@@ -25,10 +25,13 @@
 package com.ajaybhatia.wikinews.core;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 
 /**
  *
@@ -45,5 +48,12 @@ public class Wiki {
         }
     }
     
+    public ArrayList<String> headlines() {
+        ArrayList<String> news = new ArrayList<>();
+        Iterator<Element> it = document.select("#mp-itn li").iterator();
+        while (it.hasNext()) 
+            news.add(it.next().text());
         
+        return news;
+    }    
 }
