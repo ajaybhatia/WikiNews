@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 
-package readwebsite;
+package com.ajaybhatia.wikinews;
 
 import java.io.IOException;
 import java.util.ListIterator;
