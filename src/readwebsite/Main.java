@@ -29,6 +29,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 
 /**
  *
@@ -41,6 +42,8 @@ public class Main {
             document = Jsoup.connect("http://en.wikipedia.org/").get();
         } catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }        
+        }
+        
+        Elements newsHeadlines = document.select("#mp-itn b a");
     }
 }
