@@ -36,8 +36,9 @@ import org.jsoup.nodes.Document;
  */
 public class Main {
     public static void main(String[] args) {
+        Document document = null;
         try {
-            Document document = Jsoup.connect("http://en.wikipedia.org/").get();
+            document = Jsoup.connect("http://en.wikipedia.org/").get();
         } catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }        
