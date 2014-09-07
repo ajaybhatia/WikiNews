@@ -25,10 +25,12 @@
 package readwebsite;
 
 import java.io.IOException;
+import java.util.ListIterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 /**
@@ -45,5 +47,9 @@ public class Main {
         }
         
         Elements newsHeadlines = document.select("#mp-itn b a");
+        
+        ListIterator<Element> newsIterator = newsHeadlines.listIterator();
+        while (newsIterator.hasNext())
+            System.out.println(newsIterator.next().text());
     }
 }
