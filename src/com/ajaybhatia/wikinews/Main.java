@@ -24,14 +24,7 @@
 
 package com.ajaybhatia.wikinews;
 
-import java.io.IOException;
-import java.util.ListIterator;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
+import com.ajaybhatia.wikinews.core.Wiki;
 
 /**
  *
@@ -39,17 +32,8 @@ import org.jsoup.select.Elements;
  */
 public class Main {
     public static void main(String[] args) {
-        Document document = null;
-        try {
-            document = Jsoup.connect("http://en.wikipedia.org/").get();
-        } catch (IOException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        Wiki wiki = new Wiki();
         
-        Elements newsHeadlines = document.select("#mp-itn li");
-        
-        ListIterator<Element> newsIterator = newsHeadlines.listIterator();
-        while (newsIterator.hasNext())
-            System.out.println(newsIterator.next().text());
+        System.out.println(wiki.headlines());
     }
 }
