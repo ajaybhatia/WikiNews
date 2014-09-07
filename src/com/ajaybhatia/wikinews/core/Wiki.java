@@ -24,10 +24,26 @@
 
 package com.ajaybhatia.wikinews.core;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
 /**
  *
  * @author Ajay Bhatia <prof.ajaybhatia@gmail.com>
  */
 public class Wiki {
+    private Document document;
+
+    public Wiki() {
+        try {
+            document = Jsoup.connect("http://en.wikipedia.org/").get();
+        } catch (IOException ex) {
+            Logger.getLogger(Wiki.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
+        
 }
