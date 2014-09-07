@@ -46,7 +46,7 @@ public class Main {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        Elements newsHeadlines = document.select("#mp-itn b a");
+        Elements newsHeadlines = document.select("#mp-itn li");
         
         ListIterator<Element> newsIterator = newsHeadlines.listIterator();
         while (newsIterator.hasNext())
